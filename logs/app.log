@@ -1,0 +1,35 @@
+2025-09-30 11:33:33,667 - INFO - Main image selected: D:/2007050/Lab/Spyder/Lab3/color.jpg
+2025-09-30 11:33:52,946 - INFO - Watermark image selected: D:/2007050/Lab/Spyder/Lab3/output_assign2/histograms.png
+2025-09-30 11:33:57,800 - INFO - Watermarking completed successfully: watermarked_images/visible_watermark_20250930_113357.jpg
+2025-09-30 12:07:52,013 - INFO - Image Processing Application started
+2025-09-30 12:08:06,541 - INFO - Image Processing Application started
+2025-09-30 12:08:47,915 - INFO - Preprocessing image selected: D:/2007050/Lab/Spyder/Lab3/color.jpg
+2025-09-30 12:08:56,824 - INFO - Convolution filter applied: gaussian
+2025-09-30 12:08:56,828 - INFO - Convolution completed: results/convolution_gaussian_20250930_120856.jpg
+2025-09-30 12:09:05,394 - INFO - Histogram equalization completed: global
+2025-09-30 12:09:05,398 - INFO - Histogram operation completed: results/histogram_equalized_global_20250930_120905.jpg
+2025-09-30 12:10:00,804 - INFO - Image Processing Application started
+2025-09-30 12:10:07,162 - INFO - Preprocessing image selected: D:/2007050/Lab/Spyder/Lab3/color.jpg
+2025-09-30 12:10:12,295 - INFO - Frequency filtering completed: lowpass
+2025-09-30 12:10:12,306 - INFO - Frequency filtering completed: results/frequency_filtered_lowpass_20250930_121012.jpg
+2025-09-30 12:15:20,749 - INFO - Image Processing Application started
+2025-09-30 12:16:55,463 - INFO - Original image selected: D:/Projects/IPCV/watermarked_images/visible_watermark_20250930_113357.jpg
+2025-09-30 12:17:09,822 - INFO - Watermarked image selected: D:/Projects/IPCV/watermarked_images/visible_watermark_20250930_113357.jpg
+2025-09-30 12:17:31,775 - INFO - Original image selected: D:/2007050/Lab/Spyder/Lab3/color.jpg
+2025-09-30 12:17:42,434 - INFO - Watermark extraction completed successfully: results/extracted_watermark_fourier_20250930_121742.jpg
+2025-09-30 12:18:50,308 - INFO - Image Processing Application started
+2025-09-30 12:28:37,499 - INFO - Image Processing Application started
+2025-10-05 11:43:28,941 - INFO - Image Processing Application started
+2025-10-05 11:44:09,240 - INFO - Main image selected: D:/2007050/Lab/Spyder/Lab3/color.jpg
+2025-10-05 11:44:16,880 - INFO - Watermark image selected: D:/2007050/Lab/Spyder/Lab3/output_assign2/histograms.png
+2025-10-05 11:44:18,673 - INFO - Watermarking completed successfully: watermarked_images/visible_watermark_20251005_114418.jpg
+2025-10-08 08:54:40,955 - INFO - Image Processing Application started
+2025-10-08 16:51:22,295 - INFO - Image Processing Application started
+2025-10-08 16:51:47,099 - INFO - Main image selected: D:/2007050/Lab/Spyder/Lab3/color.jpg
+2025-10-08 16:52:06,012 - INFO - Watermark image selected: D:/2007050/Lab/Spyder/Lab3/output_assign1/hist_value_equalized.png
+2025-10-08 16:52:07,704 - INFO - Watermarking completed successfully: watermarked_images/visible_watermark_20251008_165207.jpg
+2025-10-08 16:53:44,608 - INFO - Original image selected: D:/2007050/Lab/Spyder/Lab3/output_assign1/hist_gray_input.png
+2025-10-08 16:54:13,473 - INFO - Watermarked image selected: D:/Projects/IPCV/watermarked_images/visible_watermark_20250930_113357.jpg
+2025-10-08 16:54:17,700 - ERROR - Watermark extraction failed
+2025-10-08 16:54:46,866 - INFO - Original image selected: D:/Projects/IPCV/watermarked_images/visible_watermark_20251008_165207.jpg
+2025-10-08 16:54:48,764 - INFO - Watermark extraction completed successfully: results/extracted_watermark_edge_20251008_165448.jpg
