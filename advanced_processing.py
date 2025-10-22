@@ -1,8 +1,3 @@
-"""
-Advanced image processing module with convolution, segmentation, histogram operations,
-frequency domain filtering, and region descriptors.
-"""
-
 import cv2
 import numpy as np
 from PIL import Image
@@ -12,27 +7,15 @@ import logging
 
 
 class AdvancedImageProcessing:
-    """Class for advanced image processing operations."""
     
     def __init__(self):
         self.supported_formats = ['.jpg', '.jpeg', '.png', '.bmp', '.tiff']
         self.logger = logging.getLogger(__name__)
     
-    # ==================== CONVOLUTION OPERATIONS ====================
+    # CONVOLUTION OPERATIONS 
     
     def apply_convolution_filter(self, image_path, filter_type='gaussian', kernel_size=5, output_path=None):
-        """
-        Apply convolution filters to an image.
-        
-        Args:
-            image_path (str): Path to input image
-            filter_type (str): Type of filter ('gaussian', 'sobel_x', 'sobel_y', 'laplacian', 'sharpen', 'edge_detect')
-            kernel_size (int): Size of the kernel (must be odd)
-            output_path (str): Path to save the filtered image
-            
-        Returns:
-            str: Path to the saved filtered image
-        """
+
         try:
             # Load image
             img = cv2.imread(image_path)
@@ -102,21 +85,10 @@ class AdvancedImageProcessing:
         
         return kernels
     
-    # ==================== IMAGE SEGMENTATION ====================
+    #  IMAGE SEGMENTATION 
     
     def segment_image(self, image_path, method='edge', threshold_value=127, output_path=None):
-        """
-        Segment an image using edge detection or thresholding.
-        
-        Args:
-            image_path (str): Path to input image
-            method (str): Segmentation method ('edge', 'threshold', 'otsu', 'adaptive')
-            threshold_value (int): Threshold value for simple thresholding
-            output_path (str): Path to save the segmented image
-            
-        Returns:
-            str: Path to the saved segmented image
-        """
+
         try:
             # Load image
             img = cv2.imread(image_path)
@@ -161,16 +133,7 @@ class AdvancedImageProcessing:
             return None
     
     def find_contours(self, image_path, output_path=None):
-        """
-        Find contours in an image and draw them.
-        
-        Args:
-            image_path (str): Path to input image
-            output_path (str): Path to save the contour image
-            
-        Returns:
-            tuple: (contour_image_path, contour_data)
-        """
+
         try:
             # Load image
             img = cv2.imread(image_path)
@@ -218,20 +181,10 @@ class AdvancedImageProcessing:
             self.logger.error(f"Error in contour detection: {str(e)}")
             return None, None
     
-    # ==================== HISTOGRAM OPERATIONS ====================
+    #  HISTOGRAM OPERATIONS 
     
     def equalize_histogram(self, image_path, method='global', output_path=None):
-        """
-        Apply histogram equalization to an image.
-        
-        Args:
-            image_path (str): Path to input image
-            method (str): Equalization method ('global', 'clahe')
-            output_path (str): Path to save the equalized image
-            
-        Returns:
-            str: Path to the saved equalized image
-        """
+
         try:
             # Load image
             img = cv2.imread(image_path)
@@ -267,17 +220,7 @@ class AdvancedImageProcessing:
             return None
     
     def match_histogram(self, source_path, reference_path, output_path=None):
-        """
-        Match histogram of source image to reference image.
-        
-        Args:
-            source_path (str): Path to source image
-            reference_path (str): Path to reference image
-            output_path (str): Path to save the matched image
-            
-        Returns:
-            str: Path to the saved matched image
-        """
+
         try:
             # Load images
             source = cv2.imread(source_path)
@@ -342,15 +285,7 @@ class AdvancedImageProcessing:
         return mapping[source]
     
     def calculate_histogram(self, image_path):
-        """
-        Calculate and return histogram data for an image.
-        
-        Args:
-            image_path (str): Path to input image
-            
-        Returns:
-            dict: Histogram data
-        """
+
         try:
             # Load image
             img = cv2.imread(image_path)
@@ -379,21 +314,10 @@ class AdvancedImageProcessing:
             self.logger.error(f"Error calculating histogram: {str(e)}")
             return None
     
-    # ==================== FREQUENCY DOMAIN FILTERING ====================
+    # FREQUENCY DOMAIN FILTERING 
     
     def apply_frequency_filter(self, image_path, filter_type='lowpass', cutoff_freq=30, output_path=None):
-        """
-        Apply frequency domain filtering to an image.
-        
-        Args:
-            image_path (str): Path to input image
-            filter_type (str): Filter type ('lowpass', 'highpass', 'bandpass', 'bandstop')
-            cutoff_freq (int): Cutoff frequency
-            output_path (str): Path to save the filtered image
-            
-        Returns:
-            str: Path to the saved filtered image
-        """
+
         try:
             # Load image
             img = cv2.imread(image_path)
@@ -461,19 +385,10 @@ class AdvancedImageProcessing:
             self.logger.error(f"Error in frequency filtering: {str(e)}")
             return None
     
-    # ==================== REGION DESCRIPTORS ====================
+    # REGION DESCRIPTORS 
     
     def extract_region_descriptors(self, image_path, output_path=None):
-        """
-        Extract region descriptors (shape, texture, statistical features).
-        
-        Args:
-            image_path (str): Path to input image
-            output_path (str): Path to save the analysis image
-            
-        Returns:
-            dict: Region descriptor data
-        """
+
         try:
             # Load image
             img = cv2.imread(image_path)
@@ -613,7 +528,7 @@ class AdvancedImageProcessing:
             return 0
         return np.mean(((data - mean) / std) ** 4) - 3
     
-    # ==================== UTILITY FUNCTIONS ====================
+    # UTILITY FUNCTIONS 
     
     def validate_image(self, image_path):
         """Validate if the image file is supported and readable."""

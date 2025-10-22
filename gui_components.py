@@ -3,22 +3,18 @@ from tkinter import ttk, filedialog, scrolledtext
 
 
 class GUIComponents:
-    """Class containing all GUI creation methods."""
     
     def __init__(self, parent_app):
-        """Initialize with reference to parent application."""
         self.app = parent_app
         self.root = parent_app.root
         self.notebook = None
         
     def create_notebook(self):
-        """Create the main notebook widget."""
         self.notebook = ttk.Notebook(self.root)
         self.notebook.pack(fill='both', expand=True, padx=10, pady=10)
         return self.notebook
     
     def create_watermarking_tab(self):
-        """Create the watermarking tab."""
         watermarking_frame = ttk.Frame(self.notebook)
         self.notebook.add(watermarking_frame, text="Watermarking")
         
@@ -87,7 +83,6 @@ class GUIComponents:
         self.app.preview_canvas.pack(fill='both', expand=True)
     
     def create_blending_tab(self):
-        """Create the blending tab."""
         blending_frame = ttk.Frame(self.notebook)
         self.notebook.add(blending_frame, text="Image Blending")
         
@@ -148,7 +143,6 @@ class GUIComponents:
         self.app.blend_preview_canvas.pack(fill='both', expand=True)
     
     def create_extraction_tab(self):
-        """Create the watermark extraction tab."""
         extraction_frame = ttk.Frame(self.notebook)
         self.notebook.add(extraction_frame, text="Watermark Extraction")
         
@@ -193,7 +187,6 @@ class GUIComponents:
         self.app.extract_preview_canvas.pack(fill='both', expand=True)
     
     def create_preprocessing_tab(self):
-        """Create the preprocessing tab."""
         preprocessing_frame = ttk.Frame(self.notebook)
         self.notebook.add(preprocessing_frame, text="Preprocessing")
         
@@ -275,7 +268,6 @@ class GUIComponents:
         self.app.preprocessing_preview_canvas.pack(fill='both', expand=True)
     
     def create_analysis_tab(self):
-        """Create the analysis tab."""
         analysis_frame = ttk.Frame(self.notebook)
         self.notebook.add(analysis_frame, text="Analysis")
         
@@ -333,7 +325,6 @@ class GUIComponents:
         self.app.analysis_preview_canvas.pack(fill='both', expand=True)
     
     def create_results_tab(self):
-        """Create the results and logs tab."""
         results_frame = ttk.Frame(self.notebook)
         self.notebook.add(results_frame, text="Results & Logs")
         

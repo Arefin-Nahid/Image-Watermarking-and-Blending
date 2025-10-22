@@ -6,17 +6,12 @@ from datetime import datetime
 import logging
 
 class EventHandlers:
-    """Class containing all event handling methods."""
     
     def __init__(self, parent_app):
-        """Initialize with reference to parent application."""
         self.app = parent_app
         self.logger = logging.getLogger(__name__)
-    
-    # ==================== FILE SELECTION HANDLERS ====================
-    
+
     def select_main_image(self):
-        """Select the main image for watermarking."""
         file_path = filedialog.askopenfilename(
             title="Select Main Image",
             filetypes=[("Image files", "*.jpg *.jpeg *.png *.bmp *.tiff")]
@@ -27,7 +22,6 @@ class EventHandlers:
             self.logger.info(f"Main image selected: {file_path}")
     
     def select_watermark_image(self):
-        """Select the watermark image."""
         file_path = filedialog.askopenfilename(
             title="Select Watermark Image",
             filetypes=[("Image files", "*.jpg *.jpeg *.png *.bmp *.tiff")]
@@ -38,7 +32,6 @@ class EventHandlers:
             self.logger.info(f"Watermark image selected: {file_path}")
     
     def select_first_image(self):
-        """Select the first image for blending."""
         file_path = filedialog.askopenfilename(
             title="Select First Image",
             filetypes=[("Image files", "*.jpg *.jpeg *.png *.bmp *.tiff")]
@@ -49,7 +42,6 @@ class EventHandlers:
             self.logger.info(f"First image selected: {file_path}")
     
     def select_second_image(self):
-        """Select the second image for blending."""
         file_path = filedialog.askopenfilename(
             title="Select Second Image",
             filetypes=[("Image files", "*.jpg *.jpeg *.png *.bmp *.tiff")]
@@ -60,7 +52,6 @@ class EventHandlers:
             self.logger.info(f"Second image selected: {file_path}")
     
     def select_original_image(self):
-        """Select the original image for extraction."""
         file_path = filedialog.askopenfilename(
             title="Select Original Image",
             filetypes=[("Image files", "*.jpg *.jpeg *.png *.bmp *.tiff")]
@@ -71,7 +62,6 @@ class EventHandlers:
             self.logger.info(f"Original image selected: {file_path}")
     
     def select_watermarked_image(self):
-        """Select the watermarked image for extraction."""
         file_path = filedialog.askopenfilename(
             title="Select Watermarked Image",
             filetypes=[("Image files", "*.jpg *.jpeg *.png *.bmp *.tiff")]
@@ -82,7 +72,6 @@ class EventHandlers:
             self.logger.info(f"Watermarked image selected: {file_path}")
     
     def select_preprocessing_image(self):
-        """Select image for preprocessing."""
         file_path = filedialog.askopenfilename(
             title="Select Image for Preprocessing",
             filetypes=[("Image files", "*.jpg *.jpeg *.png *.bmp *.tiff")]
@@ -93,7 +82,6 @@ class EventHandlers:
             self.logger.info(f"Preprocessing image selected: {file_path}")
     
     def select_analysis_image(self):
-        """Select image for analysis."""
         file_path = filedialog.askopenfilename(
             title="Select Image for Analysis",
             filetypes=[("Image files", "*.jpg *.jpeg *.png *.bmp *.tiff")]
@@ -102,9 +90,7 @@ class EventHandlers:
             self.app.main_image_path = file_path
             self.app.analysis_image_label.config(text=os.path.basename(file_path))
             self.logger.info(f"Analysis image selected: {file_path}")
-    
-    # ==================== PARAMETER UPDATE HANDLERS ====================
-    
+
     def update_edge_opacity_label(self, value):
         """Update the edge opacity label."""
         self.app.edge_opacity_label.config(text=str(int(float(value))))
@@ -128,11 +114,8 @@ class EventHandlers:
     def update_threshold_label(self, value):
         """Update threshold label."""
         self.app.threshold_label.config(text=str(int(float(value))))
-    
-    # ==================== WATERMARKING HANDLERS ====================
-    
+
     def apply_watermark(self):
-        """Apply watermarking to the selected images."""
         if not self.app.main_image_path or not self.app.watermark_image_path:
             messagebox.showerror("Error", "Please select both main and watermark images.")
             return
@@ -152,7 +135,6 @@ class EventHandlers:
         threading.Thread(target=self._apply_watermark_thread, daemon=True).start()
     
     def _apply_watermark_thread(self):
-        """Apply watermarking in a separate thread."""
         try:
             watermark_type = self.app.watermark_type.get()
             
@@ -180,24 +162,19 @@ class EventHandlers:
             self.app.root.after(0, self._watermark_error, str(e))
     
     def _watermark_success(self, result_path):
-        """Handle successful watermarking."""
         self.logger.info(f"Watermarking completed successfully: {result_path}")
         self.app.results_text.insert(tk.END, f"Watermarking completed: {result_path}\n")
         self.app.results_text.see(tk.END)
         messagebox.showinfo("Success", f"Watermarking completed successfully!\nSaved to: {result_path}")
     
     def _watermark_error(self, error_msg=None):
-        """Handle watermarking error."""
         error_text = f"Watermarking failed: {error_msg}" if error_msg else "Watermarking failed"
         self.logger.error(error_text)
         self.app.results_text.insert(tk.END, f"{error_text}\n")
         self.app.results_text.see(tk.END)
         messagebox.showerror("Error", error_text)
     
-    # ==================== BLENDING HANDLERS ====================
-    
     def blend_images(self):
-        """Blend the selected images."""
         if not self.app.main_image_path or not self.app.second_image_path:
             messagebox.showerror("Error", "Please select both images to blend.")
             return
@@ -217,7 +194,6 @@ class EventHandlers:
         threading.Thread(target=self._blend_images_thread, daemon=True).start()
     
     def _blend_images_thread(self):
-        """Blend images in a separate thread."""
         try:
             direction = self.app.blend_direction.get()
             alpha = self.app.blend_alpha.get()
@@ -238,24 +214,19 @@ class EventHandlers:
             self.app.root.after(0, self._blend_error, str(e))
     
     def _blend_success(self, result_path):
-        """Handle successful blending."""
         self.logger.info(f"Blending completed successfully: {result_path}")
         self.app.results_text.insert(tk.END, f"Blending completed: {result_path}\n")
         self.app.results_text.see(tk.END)
         messagebox.showinfo("Success", f"Blending completed successfully!\nSaved to: {result_path}")
     
     def _blend_error(self, error_msg=None):
-        """Handle blending error."""
         error_text = f"Blending failed: {error_msg}" if error_msg else "Blending failed"
         self.logger.error(error_text)
         self.app.results_text.insert(tk.END, f"{error_text}\n")
         self.app.results_text.see(tk.END)
         messagebox.showerror("Error", error_text)
     
-    # ==================== EXTRACTION HANDLERS ====================
-    
     def extract_watermark(self):
-        """Extract watermark from the selected images."""
         if not self.app.main_image_path or not self.app.watermark_image_path:
             messagebox.showerror("Error", "Please select both original and watermarked images.")
             return
@@ -275,7 +246,6 @@ class EventHandlers:
         threading.Thread(target=self._extract_watermark_thread, daemon=True).start()
     
     def _extract_watermark_thread(self):
-        """Extract watermark in a separate thread."""
         try:
             method = self.app.extraction_method.get()
             
@@ -294,21 +264,18 @@ class EventHandlers:
             self.app.root.after(0, self._extract_error, str(e))
     
     def _extract_success(self, result_path):
-        """Handle successful extraction."""
         self.logger.info(f"Watermark extraction completed successfully: {result_path}")
         self.app.results_text.insert(tk.END, f"Watermark extraction completed: {result_path}\n")
         self.app.results_text.see(tk.END)
         messagebox.showinfo("Success", f"Watermark extraction completed successfully!\nSaved to: {result_path}")
     
     def _extract_error(self, error_msg=None):
-        """Handle extraction error."""
         error_text = f"Watermark extraction failed: {error_msg}" if error_msg else "Watermark extraction failed"
         self.logger.error(error_text)
         self.app.results_text.insert(tk.END, f"{error_text}\n")
         self.app.results_text.see(tk.END)
         messagebox.showerror("Error", error_text)
     
-    # ==================== PREPROCESSING HANDLERS ====================
     
     def apply_convolution(self):
         """Apply convolution filter."""
@@ -457,8 +424,6 @@ class EventHandlers:
         self.app.results_text.insert(tk.END, f"{error_text}\n")
         self.app.results_text.see(tk.END)
         messagebox.showerror("Error", error_text)
-    
-    # ==================== ANALYSIS HANDLERS ====================
     
     def segment_image(self):
         """Segment image."""
@@ -614,8 +579,6 @@ class EventHandlers:
         self.app.results_text.insert(tk.END, f"{error_text}\n")
         self.app.results_text.see(tk.END)
         messagebox.showerror("Error", error_text)
-    
-    # ==================== UTILITY HANDLERS ====================
     
     def clear_results(self):
         """Clear the results text."""

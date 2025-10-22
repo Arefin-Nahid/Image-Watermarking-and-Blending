@@ -1,7 +1,3 @@
-"""
-Watermarking module for visible and invisible watermarking functionality.
-"""
-
 import cv2
 import numpy as np
 from PIL import Image
@@ -10,24 +6,12 @@ from datetime import datetime
 
 
 class Watermarking:
-    """Class for handling visible and invisible watermarking operations."""
     
     def __init__(self):
         self.supported_formats = ['.jpg', '.jpeg', '.png', '.bmp', '.tiff']
     
     def visible_watermark(self, main_image_path, watermark_image_path, edge_opacity=50, output_path=None):
-        """
-        Apply visible watermark using Canny edge detection.
-        
-        Args:
-            main_image_path (str): Path to the main image
-            watermark_image_path (str): Path to the watermark image
-            edge_opacity (int): Opacity of the edge watermark (0-100)
-            output_path (str): Path to save the watermarked image
-            
-        Returns:
-            str: Path to the saved watermarked image
-        """
+
         try:
             # Load images
             main_img = cv2.imread(main_image_path)
@@ -69,18 +53,7 @@ class Watermarking:
             return None
     
     def invisible_watermark(self, main_image_path, watermark_image_path, alpha=0.1, output_path=None):
-        """
-        Apply invisible watermark using Fourier Transform.
-        
-        Args:
-            main_image_path (str): Path to the main image
-            watermark_image_path (str): Path to the watermark image
-            alpha (float): Strength of the watermark (0.0-1.0)
-            output_path (str): Path to save the watermarked image
-            
-        Returns:
-            str: Path to the saved watermarked image
-        """
+
         try:
             # Load images
             main_img = cv2.imread(main_image_path)
@@ -140,18 +113,7 @@ class Watermarking:
             return None
     
     def extract_watermark(self, original_image_path, watermarked_image_path, method='fourier', output_path=None):
-        """
-        Extract watermark from watermarked image.
-        
-        Args:
-            original_image_path (str): Path to the original image
-            watermarked_image_path (str): Path to the watermarked image
-            method (str): Extraction method ('fourier' or 'edge')
-            output_path (str): Path to save the extracted watermark
-            
-        Returns:
-            str: Path to the saved extracted watermark
-        """
+
         try:
             if method == 'fourier':
                 return self._extract_fourier_watermark(original_image_path, watermarked_image_path, output_path)
@@ -165,7 +127,7 @@ class Watermarking:
             return None
     
     def _extract_fourier_watermark(self, original_path, watermarked_path, output_path):
-        """Extract watermark using Fourier Transform method."""
+       
         # Load images
         original = cv2.imread(original_path)
         watermarked = cv2.imread(watermarked_path)
@@ -217,7 +179,7 @@ class Watermarking:
         return output_path
     
     def _extract_edge_watermark(self, original_path, watermarked_path, output_path):
-        """Extract watermark using edge detection method."""
+        
         # Load images
         original = cv2.imread(original_path)
         watermarked = cv2.imread(watermarked_path)
@@ -247,7 +209,6 @@ class Watermarking:
         return output_path
     
     def validate_image(self, image_path):
-        """Validate if the image file is supported and readable."""
         if not os.path.exists(image_path):
             return False, "File does not exist"
         

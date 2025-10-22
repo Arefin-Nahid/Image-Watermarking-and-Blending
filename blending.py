@@ -1,7 +1,3 @@
-"""
-Image blending module for gradient-based blending functionality.
-"""
-
 import cv2
 import numpy as np
 from datetime import datetime
@@ -9,24 +5,12 @@ import os
 
 
 class ImageBlending:
-    """Class for handling gradient-based image blending operations."""
     
     def __init__(self):
         self.supported_formats = ['.jpg', '.jpeg', '.png', '.bmp', '.tiff']
     
     def create_gradient_mask(self, height, width, direction='horizontal', alpha=0.5):
-        """
-        Create a gradient mask for blending.
-        
-        Args:
-            height (int): Height of the mask
-            width (int): Width of the mask
-            direction (str): Direction of gradient ('horizontal', 'vertical', 'diagonal')
-            alpha (float): Blending ratio (0.0-1.0)
-            
-        Returns:
-            numpy.ndarray: Gradient mask
-        """
+
         mask = np.zeros((height, width), dtype=np.float32)
         
         if direction == 'horizontal':
@@ -51,19 +35,7 @@ class ImageBlending:
         return mask
     
     def blend_images(self, image1_path, image2_path, direction='horizontal', alpha=0.5, output_path=None):
-        """
-        Blend two images using gradient-based blending.
-        
-        Args:
-            image1_path (str): Path to the first image
-            image2_path (str): Path to the second image
-            direction (str): Blending direction ('horizontal', 'vertical', 'diagonal')
-            alpha (float): Blending ratio (0.0-1.0)
-            output_path (str): Path to save the blended image
-            
-        Returns:
-            str: Path to the saved blended image
-        """
+
         try:
             # Load images
             img1 = cv2.imread(image1_path)
@@ -110,19 +82,7 @@ class ImageBlending:
             return None
     
     def advanced_blend(self, image1_path, image2_path, blend_type='linear', alpha=0.5, output_path=None):
-        """
-        Advanced blending with different blend types.
-        
-        Args:
-            image1_path (str): Path to the first image
-            image2_path (str): Path to the second image
-            blend_type (str): Type of blending ('linear', 'sigmoid', 'cosine')
-            alpha (float): Blending ratio (0.0-1.0)
-            output_path (str): Path to save the blended image
-            
-        Returns:
-            str: Path to the saved blended image
-        """
+
         try:
             # Load images
             img1 = cv2.imread(image1_path)
@@ -168,7 +128,6 @@ class ImageBlending:
             return None
     
     def _create_advanced_mask(self, height, width, blend_type, alpha):
-        """Create advanced gradient masks with different blend types."""
         mask = np.zeros((height, width), dtype=np.float32)
         
         if blend_type == 'linear':
@@ -193,18 +152,7 @@ class ImageBlending:
         return mask
     
     def create_custom_mask(self, height, width, mask_points, output_path=None):
-        """
-        Create a custom gradient mask based on user-defined points.
-        
-        Args:
-            height (int): Height of the mask
-            width (int): Width of the mask
-            mask_points (list): List of (x, y, value) tuples defining the mask
-            output_path (str): Path to save the custom mask
-            
-        Returns:
-            numpy.ndarray: Custom gradient mask
-        """
+
         try:
             # Create base mask
             mask = np.zeros((height, width), dtype=np.float32)
@@ -213,11 +161,7 @@ class ImageBlending:
             for x, y, value in mask_points:
                 if 0 <= x < width and 0 <= y < height:
                     mask[y, x] = value
-            
-            # Interpolate between points (simplified linear interpolation)
-            # This is a basic implementation - more sophisticated interpolation
-            # could be added for better results
-            
+
             # Generate output path if not provided
             if output_path is None:
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

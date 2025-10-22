@@ -1,8 +1,3 @@
-"""
-Main GUI application for Image Processing with Watermarking and Blending.
-Refactored version with modular components.
-"""
-
 import tkinter as tk
 from tkinter import ttk
 import os
@@ -17,10 +12,8 @@ from app_utils import AppUtils
 
 
 class ImageProcessingApp:
-    """Main application class for the Image Processing GUI."""
     
     def __init__(self, root):
-        """Initialize the application."""
         self.root = root
         self.root.title("Image Processing - Watermarking & Blending")
         self.root.geometry("1200x800")

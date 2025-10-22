@@ -1,7 +1,3 @@
-"""
-File management utilities for the Image Processing application.
-"""
-
 import os
 import shutil
 from datetime import datetime
@@ -9,7 +5,6 @@ import logging
 
 
 class FileManager:
-    """Class for managing files and directories in the application."""
     
     def __init__(self):
         self.base_dirs = {
@@ -31,17 +26,7 @@ class FileManager:
                 logging.info(f"Created directory: {dir_path}")
     
     def organize_result(self, file_path, operation_type, timestamp=None):
-        """
-        Organize result files into appropriate directories.
-        
-        Args:
-            file_path (str): Path to the result file
-            operation_type (str): Type of operation ('watermark', 'blend', 'extract')
-            timestamp (str): Timestamp for organization
-            
-        Returns:
-            str: New organized path
-        """
+
         if timestamp is None:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
@@ -71,12 +56,7 @@ class FileManager:
             return file_path
     
     def cleanup_old_files(self, days=30):
-        """
-        Clean up old files from result directories.
-        
-        Args:
-            days (int): Number of days to keep files
-        """
+
         current_time = datetime.now().timestamp()
         cutoff_time = current_time - (days * 24 * 60 * 60)
         
@@ -94,15 +74,7 @@ class FileManager:
                                 logging.error(f"Error cleaning up file {file_path}: {str(e)}")
     
     def get_file_info(self, file_path):
-        """
-        Get information about a file.
-        
-        Args:
-            file_path (str): Path to the file
-            
-        Returns:
-            dict: File information
-        """
+
         if not os.path.exists(file_path):
             return None
         
@@ -116,15 +88,7 @@ class FileManager:
         }
     
     def list_results(self, operation_type=None):
-        """
-        List result files.
-        
-        Args:
-            operation_type (str): Type of operation to filter by
-            
-        Returns:
-            list: List of result files
-        """
+
         results = []
         
         for dir_name, dir_path in self.base_dirs.items():
@@ -144,16 +108,7 @@ class FileManager:
         return results
     
     def create_backup(self, file_path, backup_dir=None):
-        """
-        Create a backup of a file.
-        
-        Args:
-            file_path (str): Path to the file to backup
-            backup_dir (str): Directory to store backup
-            
-        Returns:
-            str: Path to backup file
-        """
+
         if not os.path.exists(file_path):
             return None
         
@@ -178,15 +133,7 @@ class FileManager:
             return None
     
     def get_directory_size(self, dir_path):
-        """
-        Get the total size of a directory.
-        
-        Args:
-            dir_path (str): Path to the directory
-            
-        Returns:
-            int: Total size in bytes
-        """
+
         total_size = 0
         if os.path.exists(dir_path):
             for dirpath, dirnames, filenames in os.walk(dir_path):
@@ -197,12 +144,7 @@ class FileManager:
         return total_size
     
     def get_storage_info(self):
-        """
-        Get storage information for all directories.
-        
-        Returns:
-            dict: Storage information
-        """
+
         storage_info = {}
         total_size = 0
         

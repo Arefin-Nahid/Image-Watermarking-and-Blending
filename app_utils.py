@@ -1,16 +1,9 @@
-"""
-Utility functions for the Image Processing Application.
-Contains shared utilities and helper functions.
-"""
-
 import os
 import logging
 from datetime import datetime
 
 
 class AppUtils:
-    """Class containing utility functions for the application."""
-    
     @staticmethod
     def setup_logging():
         """Setup logging for the application."""
