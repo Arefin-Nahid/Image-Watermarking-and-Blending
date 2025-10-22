@@ -1,8 +1,3 @@
-"""
-GUI Components for the Image Processing Application.
-Contains all GUI creation methods and UI components.
-"""
-
 import tkinter as tk
 from tkinter import ttk, filedialog, scrolledtext
 

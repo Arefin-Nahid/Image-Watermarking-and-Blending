@@ -1,15 +1,9 @@
-"""
-Event Handlers for the Image Processing Application.
-Contains all event handling methods and callbacks.
-"""
-
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import os
 import threading
 from datetime import datetime
 import logging
-
 
 class EventHandlers:
     """Class containing all event handling methods."""
