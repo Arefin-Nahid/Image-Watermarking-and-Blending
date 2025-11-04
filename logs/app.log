@@ -1,69 +1,10 @@
-2025-09-30 11:33:33,667 - INFO - Main image selected: D:/2007050/Lab/Spyder/Lab3/color.jpg
-2025-09-30 11:33:52,946 - INFO - Watermark image selected: D:/2007050/Lab/Spyder/Lab3/output_assign2/histograms.png
-2025-09-30 11:33:57,800 - INFO - Watermarking completed successfully: watermarked_images/visible_watermark_20250930_113357.jpg
-2025-09-30 12:07:52,013 - INFO - Image Processing Application started
-2025-09-30 12:08:06,541 - INFO - Image Processing Application started
-2025-09-30 12:08:47,915 - INFO - Preprocessing image selected: D:/2007050/Lab/Spyder/Lab3/color.jpg
-2025-09-30 12:08:56,824 - INFO - Convolution filter applied: gaussian
-2025-09-30 12:08:56,828 - INFO - Convolution completed: results/convolution_gaussian_20250930_120856.jpg
-2025-09-30 12:09:05,394 - INFO - Histogram equalization completed: global
-2025-09-30 12:09:05,398 - INFO - Histogram operation completed: results/histogram_equalized_global_20250930_120905.jpg
-2025-09-30 12:10:00,804 - INFO - Image Processing Application started
-2025-09-30 12:10:07,162 - INFO - Preprocessing image selected: D:/2007050/Lab/Spyder/Lab3/color.jpg
-2025-09-30 12:10:12,295 - INFO - Frequency filtering completed: lowpass
-2025-09-30 12:10:12,306 - INFO - Frequency filtering completed: results/frequency_filtered_lowpass_20250930_121012.jpg
-2025-09-30 12:15:20,749 - INFO - Image Processing Application started
-2025-09-30 12:16:55,463 - INFO - Original image selected: D:/Projects/IPCV/watermarked_images/visible_watermark_20250930_113357.jpg
-2025-09-30 12:17:09,822 - INFO - Watermarked image selected: D:/Projects/IPCV/watermarked_images/visible_watermark_20250930_113357.jpg
-2025-09-30 12:17:31,775 - INFO - Original image selected: D:/2007050/Lab/Spyder/Lab3/color.jpg
-2025-09-30 12:17:42,434 - INFO - Watermark extraction completed successfully: results/extracted_watermark_fourier_20250930_121742.jpg
-2025-09-30 12:18:50,308 - INFO - Image Processing Application started
-2025-09-30 12:28:37,499 - INFO - Image Processing Application started
-2025-10-05 11:43:28,941 - INFO - Image Processing Application started
-2025-10-05 11:44:09,240 - INFO - Main image selected: D:/2007050/Lab/Spyder/Lab3/color.jpg
-2025-10-05 11:44:16,880 - INFO - Watermark image selected: D:/2007050/Lab/Spyder/Lab3/output_assign2/histograms.png
-2025-10-05 11:44:18,673 - INFO - Watermarking completed successfully: watermarked_images/visible_watermark_20251005_114418.jpg
-2025-10-08 08:54:40,955 - INFO - Image Processing Application started
-2025-10-08 16:51:22,295 - INFO - Image Processing Application started
-2025-10-08 16:51:47,099 - INFO - Main image selected: D:/2007050/Lab/Spyder/Lab3/color.jpg
-2025-10-08 16:52:06,012 - INFO - Watermark image selected: D:/2007050/Lab/Spyder/Lab3/output_assign1/hist_value_equalized.png
-2025-10-08 16:52:07,704 - INFO - Watermarking completed successfully: watermarked_images/visible_watermark_20251008_165207.jpg
-2025-10-08 16:53:44,608 - INFO - Original image selected: D:/2007050/Lab/Spyder/Lab3/output_assign1/hist_gray_input.png
-2025-10-08 16:54:13,473 - INFO - Watermarked image selected: D:/Projects/IPCV/watermarked_images/visible_watermark_20250930_113357.jpg
-2025-10-08 16:54:17,700 - ERROR - Watermark extraction failed
-2025-10-08 16:54:46,866 - INFO - Original image selected: D:/Projects/IPCV/watermarked_images/visible_watermark_20251008_165207.jpg
-2025-10-08 16:54:48,764 - INFO - Watermark extraction completed successfully: results/extracted_watermark_edge_20251008_165448.jpg
-2025-10-22 14:07:46,233 - INFO - Image Processing Application started
-2025-10-22 14:31:43,403 - INFO - Image Processing Application started
-2025-10-22 14:38:34,088 - INFO - Image Processing Application started
-2025-10-22 14:38:53,978 - INFO - Main image selected: D:/2007050/Lab/Spyder/ivpc project/IMG-20220727-WA0047.jpg
-2025-10-22 14:38:56,798 - INFO - Watermark image selected: D:/2007050/Lab/Spyder/ivpc project/360_F_572591223_Dv87jbH9jcp0SO6NSre4uUP9VOFWUhaE.jpg
-2025-10-22 14:38:58,521 - INFO - Watermarking completed successfully: watermarked_images/visible_watermark_20251022_143858.jpg
-2025-10-22 14:39:25,013 - INFO - Watermarking completed successfully: watermarked_images/visible_watermark_20251022_143925.jpg
-2025-10-22 14:40:18,892 - INFO - Main image selected: D:/2007050/Lab/Spyder/ivpc project/424569577_1566738850824098_3134450787646536615_n.jpg
-2025-10-22 14:40:21,931 - INFO - Watermark image selected: D:/2007050/Lab/Spyder/ivpc project/360_F_572591223_Dv87jbH9jcp0SO6NSre4uUP9VOFWUhaE.jpg
-2025-10-22 14:40:22,752 - INFO - Watermarking completed successfully: watermarked_images/visible_watermark_20251022_144022.jpg
-2025-10-22 14:42:19,200 - INFO - Watermark image selected: D:/2007050/Lab/Spyder/ivpc project/360_F_572591223_Dv87jbH9jcp0SO6NSre4uUP9VOFWUhaE.jpg
-2025-10-22 14:42:21,806 - INFO - Main image selected: D:/2007050/Lab/Spyder/ivpc project/Screenshot 2025-10-22 144141.png
-2025-10-22 14:42:27,757 - INFO - Watermarking completed successfully: watermarked_images/visible_watermark_20251022_144227.jpg
-2025-10-22 14:42:51,823 - INFO - Watermarking completed successfully: watermarked_images/visible_watermark_20251022_144251.jpg
-2025-10-22 14:43:33,182 - INFO - Watermarking completed successfully: watermarked_images/visible_watermark_20251022_144333.jpg
-2025-10-22 14:44:22,463 - INFO - First image selected: D:/2007050/Lab/Spyder/ivpc project/424569577_1566738850824098_3134450787646536615_n.jpg
-2025-10-22 14:44:27,446 - INFO - Second image selected: D:/2007050/Lab/Spyder/ivpc project/abstract-alcohol-ink-watercolor-background_23-2149224913.jpg
-2025-10-22 14:44:37,210 - INFO - Second image selected: D:/2007050/Lab/Spyder/ivpc project/360_F_572591223_Dv87jbH9jcp0SO6NSre4uUP9VOFWUhaE.jpg
-2025-10-22 14:44:44,964 - INFO - First image selected: D:/2007050/Lab/Spyder/ivpc project/424569577_1566738850824098_3134450787646536615_n.jpg
-2025-10-22 14:44:45,874 - INFO - Blending completed successfully: blended_images/blended_horizontal_20251022_144445.jpg
-2025-10-22 14:51:13,124 - INFO - Image Processing Application started
-2025-10-22 15:16:47,821 - INFO - First image selected: D:/2007050/Lab/Spyder/ivpc project/images.jpeg
-2025-10-22 15:16:52,789 - INFO - Second image selected: D:/2007050/Lab/Spyder/ivpc project/images (1).jpeg
-2025-10-22 15:17:01,791 - INFO - Blending completed successfully: blended_images/blended_vertical_20251022_151701.jpg
-2025-10-22 15:17:31,420 - INFO - Blending completed successfully: blended_images/blended_horizontal_20251022_151731.jpg
-2025-10-22 15:20:39,946 - INFO - First image selected: D:/2007050/Lab/Spyder/ivpc project/17198341.jpg
-2025-10-22 15:20:43,434 - INFO - Second image selected: D:/2007050/Lab/Spyder/ivpc project/wp8098334-messi-vs-real-madrid-wallpapers.png
-2025-10-22 15:20:46,078 - INFO - Blending completed successfully: blended_images/blended_horizontal_20251022_152046.jpg
-2025-10-22 15:23:08,665 - INFO - First image selected: D:/2007050/Lab/Spyder/ivpc project/17198341.jpg
-2025-10-22 15:23:11,509 - INFO - Second image selected: D:/2007050/Lab/Spyder/ivpc project/Untitled.png
-2025-10-22 15:23:12,965 - INFO - Blending completed successfully: blended_images/blended_horizontal_20251022_152312.jpg
-2025-10-22 15:24:19,244 - INFO - First image selected: D:/2007050/Lab/Spyder/ivpc project/wallpaperflare.com_wallpaper (5).jpg
-2025-10-22 15:24:22,915 - INFO - Second image selected: D:/2007050/Lab/Spyder/ivpc project/wallpaperflare.com_wallpaper.jpg
-2025-10-22 15:24:29,288 - INFO - Blending completed successfully: blended_images/blended_horizontal_20251022_152429.jpg
+2025-11-05 02:07:35,517 - INFO - Image Processing Application started
+2025-11-05 02:07:48,913 - INFO - Main image selected: D:/Projects/IPCV/images/balloons.jpg
+2025-11-05 02:07:53,071 - INFO - Watermark image selected: D:/Projects/IPCV/images/donot copy.png
+2025-11-05 02:08:03,507 - INFO - Watermarking completed: watermarked_images/visible_watermark_20251105_020803.jpg
+2025-11-05 02:08:11,790 - INFO - First image selected: D:/Projects/IPCV/images/flower.png
+2025-11-05 02:08:14,448 - INFO - Second image selected: D:/Projects/IPCV/images/coffee blend.png
+2025-11-05 02:08:18,545 - INFO - Blending completed: blended_images/blended_diagonal_20251105_020818.jpg
+2025-11-05 02:08:24,634 - INFO - Original image selected: D:/Projects/IPCV/images/balloons.jpg
+2025-11-05 02:08:29,693 - INFO - Watermarked image selected: D:/Projects/IPCV/watermarked_images/visible_watermark_20251105_020803.jpg
+2025-11-05 02:08:32,477 - INFO - Extraction completed: results/extracted_watermark_edge_20251105_020832.jpg

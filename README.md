@@ -1,6 +1,6 @@
 # Image Processing Application
 
-A modular Python application for advanced image processing with watermarking, blending, and analysis capabilities. Features visible and invisible watermarking, gradient-based image blending, and advanced processing including convolution operations, segmentation, histogram operations, frequency domain filtering, and region descriptor analysis.
+A modular Python application for advanced image processing with watermarking, blending. Features visible and invisible watermarking, gradient-based image blending and water mark extraction.
 
 ## Features
 
@@ -13,14 +13,6 @@ A modular Python application for advanced image processing with watermarking, bl
 - **Gradient-based Blending**: Blend images with smooth transitions
 - **Multiple Directions**: Left-to-right, top-to-bottom, and diagonal blending
 - **Adjustable Parameters**: Control blend ratio and direction
-
-### Advanced Image Processing
-- **Convolution Operations**: Apply various filters (Gaussian, Sobel, Laplacian, Sharpen, Edge Detection)
-- **Image Segmentation**: Edge detection, thresholding, Otsu's method, and adaptive thresholding
-- **Histogram Operations**: Histogram equalization and histogram matching
-- **Frequency Domain Filtering**: Low-pass, high-pass, and band-pass filters
-- **Region Descriptors**: Shape, texture, and statistical feature analysis
-- **Contour Detection**: Automatic contour detection and analysis
 
 ### User Interface
 - **Enhanced GUI**: Multi-tab interface with preprocessing and analysis capabilities
@@ -97,33 +89,6 @@ The application automatically creates the following directories:
    - Edge Detection
 4. Click "Extract Watermark"
 
-### Advanced Preprocessing
-1. Select "Preprocessing" tab
-2. Choose image for preprocessing
-3. Apply convolution filters:
-   - Select filter type (Gaussian, Sobel, Laplacian, etc.)
-   - Adjust kernel size
-   - Click "Apply Convolution"
-4. Apply histogram operations:
-   - Choose operation (equalize or match)
-   - Select method (global or CLAHE)
-   - Click "Apply Histogram Operation"
-5. Apply frequency domain filtering:
-   - Select filter type (low-pass, high-pass, band-pass)
-   - Adjust cutoff frequency
-   - Click "Apply Frequency Filter"
-
-### Image Analysis
-1. Select "Analysis" tab
-2. Choose image for analysis
-3. Perform segmentation:
-   - Select method (edge, threshold, Otsu, adaptive)
-   - Adjust threshold value
-   - Click "Segment Image"
-4. Extract region descriptors:
-   - Click "Extract Descriptors" for shape, texture, and statistical analysis
-   - Click "Find Contours" for contour detection and analysis
-
 ## Technical Details
 
 ### Visible Watermarking Algorithm
@@ -148,39 +113,6 @@ The application automatically creates the following directories:
 3. Create gradient mask based on direction
 4. Apply blending using weighted combination
 5. Save result
-
-### Advanced Processing Algorithms
-
-#### Convolution Operations
-1. Define convolution kernels (Gaussian, Sobel, Laplacian, etc.)
-2. Apply cv2.filter2D() with custom kernels
-3. Handle different filter types and kernel sizes
-4. Save filtered results
-
-#### Image Segmentation
-1. Convert to grayscale for processing
-2. Apply segmentation method (Canny, threshold, Otsu, adaptive)
-3. Generate binary or edge maps
-4. Save segmented results
-
-#### Histogram Operations
-1. Calculate image histograms
-2. Apply equalization (global or CLAHE)
-3. Match histograms between images
-4. Preserve color information in LAB/YUV space
-
-#### Frequency Domain Filtering
-1. Apply Discrete Fourier Transform (DFT)
-2. Create frequency masks (low-pass, high-pass, band-pass)
-3. Apply filters in frequency domain
-4. Inverse DFT to get filtered image
-
-#### Region Descriptors
-1. Find contours using cv2.findContours()
-2. Calculate shape features (area, perimeter, aspect ratio, Hu moments)
-3. Extract texture features (mean, std, energy, entropy)
-4. Compute statistical features (skewness, kurtosis, etc.)
-5. Visualize and analyze results
 
 ## File Management
 
@@ -226,7 +158,6 @@ IPCV/
 ├── app_utils.py            # Utility functions and helpers
 ├── watermarking.py         # Watermarking functionality
 ├── blending.py            # Image blending functionality
-├── advanced_processing.py  # Advanced image processing features
 ├── file_manager.py        # File management utilities
 ├── requirements.txt       # Python dependencies
 ├── run_app.bat           # Windows launcher
@@ -240,17 +171,9 @@ IPCV/
 ### Adding New Features
 1. **GUI Components**: Add new tabs/controls in `gui_components.py`
 2. **Event Handlers**: Add new interactions in `event_handlers.py`
-3. **Processing**: Add new algorithms in `watermarking.py`, `blending.py`, or `advanced_processing.py`
+3. **Processing**: Add new algorithms in `watermarking.py`, `blending.py`
 4. **Utilities**: Add helper functions in `app_utils.py`
 
 ## License
 
 This project is open source and available under the MIT License.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit pull requests or open issues for bugs and feature requests.
-
-## Support
-
-For support and questions, please check the logs directory for error details or create an issue in the project repository.
